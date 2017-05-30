@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Module` struct in crate `parity_wasm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Module">
+
+    <title>parity_wasm::elements::Module - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>parity_wasm</a>::<wbr><a href='index.html'>elements</a></p><script>window.sidebarCurrent = {name: 'Module', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>parity_wasm</a>::<wbr><a href='index.html'>elements</a>::<wbr><a class="struct" href=''>Module</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/parity_wasm/elements/module.rs.html#9-13' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Module { /* fields omitted */ }</pre><div class='docblock'><p>WebAssembly module</p>
+</div><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../parity_wasm/elements/struct.Module.html" title="struct parity_wasm::elements::Module">Module</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/module.rs.html#25-140' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(sections: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="enum" href="../../parity_wasm/elements/enum.Section.html" title="enum parity_wasm::elements::Section">Section</a>&gt;) -&gt; Self</code></span></h4>
+<div class='docblock'><p>New module with sections</p>
+</div><h4 id='method.into_sections' class="method"><span id='into_sections.v' class='invisible'><code>fn <a href='#method.into_sections' class='fnname'>into_sections</a>(self) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="enum" href="../../parity_wasm/elements/enum.Section.html" title="enum parity_wasm::elements::Section">Section</a>&gt;</code></span></h4>
+<div class='docblock'><p>Destructure the module, yielding sections</p>
+</div><h4 id='method.version' class="method"><span id='version.v' class='invisible'><code>fn <a href='#method.version' class='fnname'>version</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code></span></h4>
+<div class='docblock'><p>Version of module.</p>
+</div><h4 id='method.sections' class="method"><span id='sections.v' class='invisible'><code>fn <a href='#method.sections' class='fnname'>sections</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="enum" href="../../parity_wasm/elements/enum.Section.html" title="enum parity_wasm::elements::Section">Section</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a></code></span></h4>
+<div class='docblock'><p>Sections list.
+Each known section is optional and may appear at most once.</p>
+</div><h4 id='method.sections_mut' class="method"><span id='sections_mut.v' class='invisible'><code>fn <a href='#method.sections_mut' class='fnname'>sections_mut</a>(&amp;mut self) -&gt; &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="enum" href="../../parity_wasm/elements/enum.Section.html" title="enum parity_wasm::elements::Section">Section</a>&gt;</code></span></h4>
+<div class='docblock'><p>Sections list (mutable)
+Each known section is optional and may appear at most once.</p>
+</div><h4 id='method.code_section' class="method"><span id='code_section.v' class='invisible'><code>fn <a href='#method.code_section' class='fnname'>code_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.CodeSection.html" title="struct parity_wasm::elements::CodeSection">CodeSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Code section, if any.</p>
+</div><h4 id='method.type_section' class="method"><span id='type_section.v' class='invisible'><code>fn <a href='#method.type_section' class='fnname'>type_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.TypeSection.html" title="struct parity_wasm::elements::TypeSection">TypeSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Types section, if any.</p>
+</div><h4 id='method.import_section' class="method"><span id='import_section.v' class='invisible'><code>fn <a href='#method.import_section' class='fnname'>import_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.ImportSection.html" title="struct parity_wasm::elements::ImportSection">ImportSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Imports section, if any.</p>
+</div><h4 id='method.global_section' class="method"><span id='global_section.v' class='invisible'><code>fn <a href='#method.global_section' class='fnname'>global_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.GlobalSection.html" title="struct parity_wasm::elements::GlobalSection">GlobalSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Globals section, if any.</p>
+</div><h4 id='method.export_section' class="method"><span id='export_section.v' class='invisible'><code>fn <a href='#method.export_section' class='fnname'>export_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.ExportSection.html" title="struct parity_wasm::elements::ExportSection">ExportSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Exports section, if any.</p>
+</div><h4 id='method.table_section' class="method"><span id='table_section.v' class='invisible'><code>fn <a href='#method.table_section' class='fnname'>table_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.TableSection.html" title="struct parity_wasm::elements::TableSection">TableSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Table section, if any.</p>
+</div><h4 id='method.data_section' class="method"><span id='data_section.v' class='invisible'><code>fn <a href='#method.data_section' class='fnname'>data_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.DataSection.html" title="struct parity_wasm::elements::DataSection">DataSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Data section, if any.</p>
+</div><h4 id='method.elements_section' class="method"><span id='elements_section.v' class='invisible'><code>fn <a href='#method.elements_section' class='fnname'>elements_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.ElementSection.html" title="struct parity_wasm::elements::ElementSection">ElementSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Element section, if any.</p>
+</div><h4 id='method.memory_section' class="method"><span id='memory_section.v' class='invisible'><code>fn <a href='#method.memory_section' class='fnname'>memory_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.MemorySection.html" title="struct parity_wasm::elements::MemorySection">MemorySection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Memory section, if any.</p>
+</div><h4 id='method.functions_section' class="method"><span id='functions_section.v' class='invisible'><code>fn <a href='#method.functions_section' class='fnname'>functions_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../parity_wasm/elements/struct.FunctionsSection.html" title="struct parity_wasm::elements::FunctionsSection">FunctionsSection</a>&gt;</code></span></h4>
+<div class='docblock'><p>Functions signatures section, if any.</p>
+</div><h4 id='method.start_section' class="method"><span id='start_section.v' class='invisible'><code>fn <a href='#method.start_section' class='fnname'>start_section</a>(&amp;self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;</code></span></h4>
+<div class='docblock'><p>Start section, if any.</p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html" title="trait core::default::Default">Default</a> for <a class="struct" href="../../parity_wasm/elements/struct.Module.html" title="struct parity_wasm::elements::Module">Module</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/module.rs.html#15-23' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.default' class="method"><span id='default.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default' class='fnname'>default</a>() -&gt; Self</code></span></h4>
+<div class='docblock'><p>Returns the &quot;default value&quot; for a type. <a href="https://doc.rust-lang.org/nightly/core/default/trait.Default.html#tymethod.default">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../../parity_wasm/elements/trait.Deserialize.html" title="trait parity_wasm::elements::Deserialize">Deserialize</a> for <a class="struct" href="../../parity_wasm/elements/struct.Module.html" title="struct parity_wasm::elements::Module">Module</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/module.rs.html#142-164' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Error' class="type"><span id='Error.t' class='invisible'><code>type <a href='../../parity_wasm/elements/trait.Deserialize.html#associatedtype.Error' class="type">Error</a> = <a class="enum" href="../../parity_wasm/elements/enum.Error.html" title="enum parity_wasm::elements::Error">Error</a></code></span></h4>
+<div class='docblock'><p>Serialization error produced by deserialization routine.</p>
+</div><h4 id='method.deserialize' class="method"><span id='deserialize.v' class='invisible'><code>fn <a href='../../parity_wasm/elements/trait.Deserialize.html#tymethod.deserialize' class='fnname'>deserialize</a>&lt;R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a>&gt;(reader: &amp;mut R) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, Self::<a class="trait" href="../../parity_wasm/elements/trait.Deserialize.html" title="trait parity_wasm::elements::Deserialize">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Deserialize type from serial i/o</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../../parity_wasm/elements/trait.Serialize.html" title="trait parity_wasm::elements::Serialize">Serialize</a> for <a class="struct" href="../../parity_wasm/elements/struct.Module.html" title="struct parity_wasm::elements::Module">Module</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/module.rs.html#166-177' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Error-1' class="type"><span id='Error.t-1' class='invisible'><code>type <a href='../../parity_wasm/elements/trait.Serialize.html#associatedtype.Error' class="type">Error</a> = <a class="enum" href="../../parity_wasm/elements/enum.Error.html" title="enum parity_wasm::elements::Error">Error</a></code></span></h4>
+<div class='docblock'><p>Serialization error produced by serialization routine.</p>
+</div><h4 id='method.serialize' class="method"><span id='serialize.v' class='invisible'><code>fn <a href='../../parity_wasm/elements/trait.Serialize.html#tymethod.serialize' class='fnname'>serialize</a>&lt;W:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a>&gt;(self, w: &amp;mut W) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, Self::<a class="trait" href="../../parity_wasm/elements/trait.Serialize.html" title="trait parity_wasm::elements::Serialize">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Serialize type to serial i/o</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.From.html" title="trait core::convert::From">From</a>&lt;ModuleScaffold&gt; for <a class="struct" href="../../parity_wasm/elements/struct.Module.html" title="struct parity_wasm::elements::Module">Module</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/builder/module.rs.html#87-137' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.from' class="method"><span id='from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/convert/trait.From.html#tymethod.from' class='fnname'>from</a>(module: ModuleScaffold) -&gt; Self</code></span></h4>
+<div class='docblock'><p>Performs the conversion.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "parity_wasm";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

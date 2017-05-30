@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Opcode` enum in crate `parity_wasm`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Opcode">
+
+    <title>parity_wasm::elements::Opcode - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>parity_wasm</a>::<wbr><a href='index.html'>elements</a></p><script>window.sidebarCurrent = {name: 'Opcode', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='../index.html'>parity_wasm</a>::<wbr><a href='index.html'>elements</a>::<wbr><a class="enum" href=''>Opcode</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#100-286' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Opcode {
+    Unreachable,
+    Nop,
+    Block(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>),
+    Loop(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>),
+    If(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>),
+    Else,
+    End,
+    Br(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    BrIf(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    BrTable(<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    Return,
+    Call(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    CallIndirect(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>),
+    Drop,
+    Select,
+    GetLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    SetLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    TeeLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    GetGlobal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    SetGlobal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    F32Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    F64Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Load8S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Load8U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Load16S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Load16U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load8S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load8U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load16S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load16U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load32S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Load32U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    F32Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    F64Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Store8(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I32Store16(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Store8(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Store16(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    I64Store32(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    CurrentMemory(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>),
+    GrowMemory(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>),
+    I32Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>),
+    I64Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>),
+    F32Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+    F64Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>),
+    I32Eqz,
+    I32Eq,
+    I32Ne,
+    I32LtS,
+    I32LtU,
+    I32GtS,
+    I32GtU,
+    I32LeS,
+    I32LeU,
+    I32GeS,
+    I32GeU,
+    I64Eqz,
+    I64Eq,
+    I64Ne,
+    I64LtS,
+    I64LtU,
+    I64GtS,
+    I64GtU,
+    I64LeS,
+    I64LeU,
+    I64GeS,
+    I64GeU,
+    F32Eq,
+    F32Ne,
+    F32Lt,
+    F32Gt,
+    F32Le,
+    F32Ge,
+    F64Eq,
+    F64Ne,
+    F64Lt,
+    F64Gt,
+    F64Le,
+    F64Ge,
+    I32Clz,
+    I32Ctz,
+    I32Popcnt,
+    I32Add,
+    I32Sub,
+    I32Mul,
+    I32DivS,
+    I32DivU,
+    I32RemS,
+    I32RemU,
+    I32And,
+    I32Or,
+    I32Xor,
+    I32Shl,
+    I32ShrS,
+    I32ShrU,
+    I32Rotl,
+    I32Rotr,
+    I64Clz,
+    I64Ctz,
+    I64Popcnt,
+    I64Add,
+    I64Sub,
+    I64Mul,
+    I64DivS,
+    I64DivU,
+    I64RemS,
+    I64RemU,
+    I64And,
+    I64Or,
+    I64Xor,
+    I64Shl,
+    I64ShrS,
+    I64ShrU,
+    I64Rotl,
+    I64Rotr,
+    F32Abs,
+    F32Neg,
+    F32Ceil,
+    F32Floor,
+    F32Trunc,
+    F32Nearest,
+    F32Sqrt,
+    F32Add,
+    F32Sub,
+    F32Mul,
+    F32Div,
+    F32Min,
+    F32Max,
+    F32Copysign,
+    F64Abs,
+    F64Neg,
+    F64Ceil,
+    F64Floor,
+    F64Trunc,
+    F64Nearest,
+    F64Sqrt,
+    F64Add,
+    F64Sub,
+    F64Mul,
+    F64Div,
+    F64Min,
+    F64Max,
+    F64Copysign,
+    I32WarpI64,
+    I32TruncSF32,
+    I32TruncUF32,
+    I32TruncSF64,
+    I32TruncUF64,
+    I64ExtendSI32,
+    I64ExtendUI32,
+    I64TruncSF32,
+    I64TruncUF32,
+    I64TruncSF64,
+    I64TruncUF64,
+    F32ConvertSI32,
+    F32ConvertUI32,
+    F32ConvertSI64,
+    F32ConvertUI64,
+    F32DemoteF64,
+    F64ConvertSI32,
+    F64ConvertUI32,
+    F64ConvertSI64,
+    F64ConvertUI64,
+    F64PromoteF32,
+    I32ReinterpretF32,
+    I64ReinterpretF64,
+    F32ReinterpretI32,
+    F64ReinterpretI64,
+}</pre><div class='docblock'><p>Opcode</p>
+</div><h2 class='variants'>Variants</h2>
+<span id='variant.Unreachable' class='variant'><span id='Unreachable.v' class='invisible'><code>Unreachable</code></span></span><span id='variant.Nop' class='variant'><span id='Nop.v' class='invisible'><code>Nop</code></span></span><span id='variant.Block' class='variant'><span id='Block.v' class='invisible'><code>Block(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>)</code></span></span><span id='variant.Loop' class='variant'><span id='Loop.v' class='invisible'><code>Loop(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>)</code></span></span><span id='variant.If' class='variant'><span id='If.v' class='invisible'><code>If(<a class="enum" href="../../parity_wasm/elements/enum.BlockType.html" title="enum parity_wasm::elements::BlockType">BlockType</a>,&nbsp;<a class="struct" href="../../parity_wasm/elements/struct.Opcodes.html" title="struct parity_wasm::elements::Opcodes">Opcodes</a>)</code></span></span><span id='variant.Else' class='variant'><span id='Else.v' class='invisible'><code>Else</code></span></span><span id='variant.End' class='variant'><span id='End.v' class='invisible'><code>End</code></span></span><span id='variant.Br' class='variant'><span id='Br.v' class='invisible'><code>Br(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.BrIf' class='variant'><span id='BrIf.v' class='invisible'><code>BrIf(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.BrTable' class='variant'><span id='BrTable.v' class='invisible'><code>BrTable(<a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>&gt;,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.Return' class='variant'><span id='Return.v' class='invisible'><code>Return</code></span></span><span id='variant.Call' class='variant'><span id='Call.v' class='invisible'><code>Call(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.CallIndirect' class='variant'><span id='CallIndirect.v' class='invisible'><code>CallIndirect(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></span><span id='variant.Drop' class='variant'><span id='Drop.v' class='invisible'><code>Drop</code></span></span><span id='variant.Select' class='variant'><span id='Select.v' class='invisible'><code>Select</code></span></span><span id='variant.GetLocal' class='variant'><span id='GetLocal.v' class='invisible'><code>GetLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.SetLocal' class='variant'><span id='SetLocal.v' class='invisible'><code>SetLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.TeeLocal' class='variant'><span id='TeeLocal.v' class='invisible'><code>TeeLocal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.GetGlobal' class='variant'><span id='GetGlobal.v' class='invisible'><code>GetGlobal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.SetGlobal' class='variant'><span id='SetGlobal.v' class='invisible'><code>SetGlobal(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Load' class='variant'><span id='I32Load.v' class='invisible'><code>I32Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load' class='variant'><span id='I64Load.v' class='invisible'><code>I64Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.F32Load' class='variant'><span id='F32Load.v' class='invisible'><code>F32Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.F64Load' class='variant'><span id='F64Load.v' class='invisible'><code>F64Load(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Load8S' class='variant'><span id='I32Load8S.v' class='invisible'><code>I32Load8S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Load8U' class='variant'><span id='I32Load8U.v' class='invisible'><code>I32Load8U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Load16S' class='variant'><span id='I32Load16S.v' class='invisible'><code>I32Load16S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Load16U' class='variant'><span id='I32Load16U.v' class='invisible'><code>I32Load16U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load8S' class='variant'><span id='I64Load8S.v' class='invisible'><code>I64Load8S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load8U' class='variant'><span id='I64Load8U.v' class='invisible'><code>I64Load8U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load16S' class='variant'><span id='I64Load16S.v' class='invisible'><code>I64Load16S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load16U' class='variant'><span id='I64Load16U.v' class='invisible'><code>I64Load16U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load32S' class='variant'><span id='I64Load32S.v' class='invisible'><code>I64Load32S(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Load32U' class='variant'><span id='I64Load32U.v' class='invisible'><code>I64Load32U(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Store' class='variant'><span id='I32Store.v' class='invisible'><code>I32Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Store' class='variant'><span id='I64Store.v' class='invisible'><code>I64Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.F32Store' class='variant'><span id='F32Store.v' class='invisible'><code>F32Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.F64Store' class='variant'><span id='F64Store.v' class='invisible'><code>F64Store(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Store8' class='variant'><span id='I32Store8.v' class='invisible'><code>I32Store8(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I32Store16' class='variant'><span id='I32Store16.v' class='invisible'><code>I32Store16(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Store8' class='variant'><span id='I64Store8.v' class='invisible'><code>I64Store8(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Store16' class='variant'><span id='I64Store16.v' class='invisible'><code>I64Store16(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.I64Store32' class='variant'><span id='I64Store32.v' class='invisible'><code>I64Store32(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.CurrentMemory' class='variant'><span id='CurrentMemory.v' class='invisible'><code>CurrentMemory(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></span><span id='variant.GrowMemory' class='variant'><span id='GrowMemory.v' class='invisible'><code>GrowMemory(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>)</code></span></span><span id='variant.I32Const' class='variant'><span id='I32Const.v' class='invisible'><code>I32Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>)</code></span></span><span id='variant.I64Const' class='variant'><span id='I64Const.v' class='invisible'><code>I64Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.i64.html">i64</a>)</code></span></span><span id='variant.F32Const' class='variant'><span id='F32Const.v' class='invisible'><code>F32Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></span><span id='variant.F64Const' class='variant'><span id='F64Const.v' class='invisible'><code>F64Const(<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>)</code></span></span><span id='variant.I32Eqz' class='variant'><span id='I32Eqz.v' class='invisible'><code>I32Eqz</code></span></span><span id='variant.I32Eq' class='variant'><span id='I32Eq.v' class='invisible'><code>I32Eq</code></span></span><span id='variant.I32Ne' class='variant'><span id='I32Ne.v' class='invisible'><code>I32Ne</code></span></span><span id='variant.I32LtS' class='variant'><span id='I32LtS.v' class='invisible'><code>I32LtS</code></span></span><span id='variant.I32LtU' class='variant'><span id='I32LtU.v' class='invisible'><code>I32LtU</code></span></span><span id='variant.I32GtS' class='variant'><span id='I32GtS.v' class='invisible'><code>I32GtS</code></span></span><span id='variant.I32GtU' class='variant'><span id='I32GtU.v' class='invisible'><code>I32GtU</code></span></span><span id='variant.I32LeS' class='variant'><span id='I32LeS.v' class='invisible'><code>I32LeS</code></span></span><span id='variant.I32LeU' class='variant'><span id='I32LeU.v' class='invisible'><code>I32LeU</code></span></span><span id='variant.I32GeS' class='variant'><span id='I32GeS.v' class='invisible'><code>I32GeS</code></span></span><span id='variant.I32GeU' class='variant'><span id='I32GeU.v' class='invisible'><code>I32GeU</code></span></span><span id='variant.I64Eqz' class='variant'><span id='I64Eqz.v' class='invisible'><code>I64Eqz</code></span></span><span id='variant.I64Eq' class='variant'><span id='I64Eq.v' class='invisible'><code>I64Eq</code></span></span><span id='variant.I64Ne' class='variant'><span id='I64Ne.v' class='invisible'><code>I64Ne</code></span></span><span id='variant.I64LtS' class='variant'><span id='I64LtS.v' class='invisible'><code>I64LtS</code></span></span><span id='variant.I64LtU' class='variant'><span id='I64LtU.v' class='invisible'><code>I64LtU</code></span></span><span id='variant.I64GtS' class='variant'><span id='I64GtS.v' class='invisible'><code>I64GtS</code></span></span><span id='variant.I64GtU' class='variant'><span id='I64GtU.v' class='invisible'><code>I64GtU</code></span></span><span id='variant.I64LeS' class='variant'><span id='I64LeS.v' class='invisible'><code>I64LeS</code></span></span><span id='variant.I64LeU' class='variant'><span id='I64LeU.v' class='invisible'><code>I64LeU</code></span></span><span id='variant.I64GeS' class='variant'><span id='I64GeS.v' class='invisible'><code>I64GeS</code></span></span><span id='variant.I64GeU' class='variant'><span id='I64GeU.v' class='invisible'><code>I64GeU</code></span></span><span id='variant.F32Eq' class='variant'><span id='F32Eq.v' class='invisible'><code>F32Eq</code></span></span><span id='variant.F32Ne' class='variant'><span id='F32Ne.v' class='invisible'><code>F32Ne</code></span></span><span id='variant.F32Lt' class='variant'><span id='F32Lt.v' class='invisible'><code>F32Lt</code></span></span><span id='variant.F32Gt' class='variant'><span id='F32Gt.v' class='invisible'><code>F32Gt</code></span></span><span id='variant.F32Le' class='variant'><span id='F32Le.v' class='invisible'><code>F32Le</code></span></span><span id='variant.F32Ge' class='variant'><span id='F32Ge.v' class='invisible'><code>F32Ge</code></span></span><span id='variant.F64Eq' class='variant'><span id='F64Eq.v' class='invisible'><code>F64Eq</code></span></span><span id='variant.F64Ne' class='variant'><span id='F64Ne.v' class='invisible'><code>F64Ne</code></span></span><span id='variant.F64Lt' class='variant'><span id='F64Lt.v' class='invisible'><code>F64Lt</code></span></span><span id='variant.F64Gt' class='variant'><span id='F64Gt.v' class='invisible'><code>F64Gt</code></span></span><span id='variant.F64Le' class='variant'><span id='F64Le.v' class='invisible'><code>F64Le</code></span></span><span id='variant.F64Ge' class='variant'><span id='F64Ge.v' class='invisible'><code>F64Ge</code></span></span><span id='variant.I32Clz' class='variant'><span id='I32Clz.v' class='invisible'><code>I32Clz</code></span></span><span id='variant.I32Ctz' class='variant'><span id='I32Ctz.v' class='invisible'><code>I32Ctz</code></span></span><span id='variant.I32Popcnt' class='variant'><span id='I32Popcnt.v' class='invisible'><code>I32Popcnt</code></span></span><span id='variant.I32Add' class='variant'><span id='I32Add.v' class='invisible'><code>I32Add</code></span></span><span id='variant.I32Sub' class='variant'><span id='I32Sub.v' class='invisible'><code>I32Sub</code></span></span><span id='variant.I32Mul' class='variant'><span id='I32Mul.v' class='invisible'><code>I32Mul</code></span></span><span id='variant.I32DivS' class='variant'><span id='I32DivS.v' class='invisible'><code>I32DivS</code></span></span><span id='variant.I32DivU' class='variant'><span id='I32DivU.v' class='invisible'><code>I32DivU</code></span></span><span id='variant.I32RemS' class='variant'><span id='I32RemS.v' class='invisible'><code>I32RemS</code></span></span><span id='variant.I32RemU' class='variant'><span id='I32RemU.v' class='invisible'><code>I32RemU</code></span></span><span id='variant.I32And' class='variant'><span id='I32And.v' class='invisible'><code>I32And</code></span></span><span id='variant.I32Or' class='variant'><span id='I32Or.v' class='invisible'><code>I32Or</code></span></span><span id='variant.I32Xor' class='variant'><span id='I32Xor.v' class='invisible'><code>I32Xor</code></span></span><span id='variant.I32Shl' class='variant'><span id='I32Shl.v' class='invisible'><code>I32Shl</code></span></span><span id='variant.I32ShrS' class='variant'><span id='I32ShrS.v' class='invisible'><code>I32ShrS</code></span></span><span id='variant.I32ShrU' class='variant'><span id='I32ShrU.v' class='invisible'><code>I32ShrU</code></span></span><span id='variant.I32Rotl' class='variant'><span id='I32Rotl.v' class='invisible'><code>I32Rotl</code></span></span><span id='variant.I32Rotr' class='variant'><span id='I32Rotr.v' class='invisible'><code>I32Rotr</code></span></span><span id='variant.I64Clz' class='variant'><span id='I64Clz.v' class='invisible'><code>I64Clz</code></span></span><span id='variant.I64Ctz' class='variant'><span id='I64Ctz.v' class='invisible'><code>I64Ctz</code></span></span><span id='variant.I64Popcnt' class='variant'><span id='I64Popcnt.v' class='invisible'><code>I64Popcnt</code></span></span><span id='variant.I64Add' class='variant'><span id='I64Add.v' class='invisible'><code>I64Add</code></span></span><span id='variant.I64Sub' class='variant'><span id='I64Sub.v' class='invisible'><code>I64Sub</code></span></span><span id='variant.I64Mul' class='variant'><span id='I64Mul.v' class='invisible'><code>I64Mul</code></span></span><span id='variant.I64DivS' class='variant'><span id='I64DivS.v' class='invisible'><code>I64DivS</code></span></span><span id='variant.I64DivU' class='variant'><span id='I64DivU.v' class='invisible'><code>I64DivU</code></span></span><span id='variant.I64RemS' class='variant'><span id='I64RemS.v' class='invisible'><code>I64RemS</code></span></span><span id='variant.I64RemU' class='variant'><span id='I64RemU.v' class='invisible'><code>I64RemU</code></span></span><span id='variant.I64And' class='variant'><span id='I64And.v' class='invisible'><code>I64And</code></span></span><span id='variant.I64Or' class='variant'><span id='I64Or.v' class='invisible'><code>I64Or</code></span></span><span id='variant.I64Xor' class='variant'><span id='I64Xor.v' class='invisible'><code>I64Xor</code></span></span><span id='variant.I64Shl' class='variant'><span id='I64Shl.v' class='invisible'><code>I64Shl</code></span></span><span id='variant.I64ShrS' class='variant'><span id='I64ShrS.v' class='invisible'><code>I64ShrS</code></span></span><span id='variant.I64ShrU' class='variant'><span id='I64ShrU.v' class='invisible'><code>I64ShrU</code></span></span><span id='variant.I64Rotl' class='variant'><span id='I64Rotl.v' class='invisible'><code>I64Rotl</code></span></span><span id='variant.I64Rotr' class='variant'><span id='I64Rotr.v' class='invisible'><code>I64Rotr</code></span></span><span id='variant.F32Abs' class='variant'><span id='F32Abs.v' class='invisible'><code>F32Abs</code></span></span><span id='variant.F32Neg' class='variant'><span id='F32Neg.v' class='invisible'><code>F32Neg</code></span></span><span id='variant.F32Ceil' class='variant'><span id='F32Ceil.v' class='invisible'><code>F32Ceil</code></span></span><span id='variant.F32Floor' class='variant'><span id='F32Floor.v' class='invisible'><code>F32Floor</code></span></span><span id='variant.F32Trunc' class='variant'><span id='F32Trunc.v' class='invisible'><code>F32Trunc</code></span></span><span id='variant.F32Nearest' class='variant'><span id='F32Nearest.v' class='invisible'><code>F32Nearest</code></span></span><span id='variant.F32Sqrt' class='variant'><span id='F32Sqrt.v' class='invisible'><code>F32Sqrt</code></span></span><span id='variant.F32Add' class='variant'><span id='F32Add.v' class='invisible'><code>F32Add</code></span></span><span id='variant.F32Sub' class='variant'><span id='F32Sub.v' class='invisible'><code>F32Sub</code></span></span><span id='variant.F32Mul' class='variant'><span id='F32Mul.v' class='invisible'><code>F32Mul</code></span></span><span id='variant.F32Div' class='variant'><span id='F32Div.v' class='invisible'><code>F32Div</code></span></span><span id='variant.F32Min' class='variant'><span id='F32Min.v' class='invisible'><code>F32Min</code></span></span><span id='variant.F32Max' class='variant'><span id='F32Max.v' class='invisible'><code>F32Max</code></span></span><span id='variant.F32Copysign' class='variant'><span id='F32Copysign.v' class='invisible'><code>F32Copysign</code></span></span><span id='variant.F64Abs' class='variant'><span id='F64Abs.v' class='invisible'><code>F64Abs</code></span></span><span id='variant.F64Neg' class='variant'><span id='F64Neg.v' class='invisible'><code>F64Neg</code></span></span><span id='variant.F64Ceil' class='variant'><span id='F64Ceil.v' class='invisible'><code>F64Ceil</code></span></span><span id='variant.F64Floor' class='variant'><span id='F64Floor.v' class='invisible'><code>F64Floor</code></span></span><span id='variant.F64Trunc' class='variant'><span id='F64Trunc.v' class='invisible'><code>F64Trunc</code></span></span><span id='variant.F64Nearest' class='variant'><span id='F64Nearest.v' class='invisible'><code>F64Nearest</code></span></span><span id='variant.F64Sqrt' class='variant'><span id='F64Sqrt.v' class='invisible'><code>F64Sqrt</code></span></span><span id='variant.F64Add' class='variant'><span id='F64Add.v' class='invisible'><code>F64Add</code></span></span><span id='variant.F64Sub' class='variant'><span id='F64Sub.v' class='invisible'><code>F64Sub</code></span></span><span id='variant.F64Mul' class='variant'><span id='F64Mul.v' class='invisible'><code>F64Mul</code></span></span><span id='variant.F64Div' class='variant'><span id='F64Div.v' class='invisible'><code>F64Div</code></span></span><span id='variant.F64Min' class='variant'><span id='F64Min.v' class='invisible'><code>F64Min</code></span></span><span id='variant.F64Max' class='variant'><span id='F64Max.v' class='invisible'><code>F64Max</code></span></span><span id='variant.F64Copysign' class='variant'><span id='F64Copysign.v' class='invisible'><code>F64Copysign</code></span></span><span id='variant.I32WarpI64' class='variant'><span id='I32WarpI64.v' class='invisible'><code>I32WarpI64</code></span></span><span id='variant.I32TruncSF32' class='variant'><span id='I32TruncSF32.v' class='invisible'><code>I32TruncSF32</code></span></span><span id='variant.I32TruncUF32' class='variant'><span id='I32TruncUF32.v' class='invisible'><code>I32TruncUF32</code></span></span><span id='variant.I32TruncSF64' class='variant'><span id='I32TruncSF64.v' class='invisible'><code>I32TruncSF64</code></span></span><span id='variant.I32TruncUF64' class='variant'><span id='I32TruncUF64.v' class='invisible'><code>I32TruncUF64</code></span></span><span id='variant.I64ExtendSI32' class='variant'><span id='I64ExtendSI32.v' class='invisible'><code>I64ExtendSI32</code></span></span><span id='variant.I64ExtendUI32' class='variant'><span id='I64ExtendUI32.v' class='invisible'><code>I64ExtendUI32</code></span></span><span id='variant.I64TruncSF32' class='variant'><span id='I64TruncSF32.v' class='invisible'><code>I64TruncSF32</code></span></span><span id='variant.I64TruncUF32' class='variant'><span id='I64TruncUF32.v' class='invisible'><code>I64TruncUF32</code></span></span><span id='variant.I64TruncSF64' class='variant'><span id='I64TruncSF64.v' class='invisible'><code>I64TruncSF64</code></span></span><span id='variant.I64TruncUF64' class='variant'><span id='I64TruncUF64.v' class='invisible'><code>I64TruncUF64</code></span></span><span id='variant.F32ConvertSI32' class='variant'><span id='F32ConvertSI32.v' class='invisible'><code>F32ConvertSI32</code></span></span><span id='variant.F32ConvertUI32' class='variant'><span id='F32ConvertUI32.v' class='invisible'><code>F32ConvertUI32</code></span></span><span id='variant.F32ConvertSI64' class='variant'><span id='F32ConvertSI64.v' class='invisible'><code>F32ConvertSI64</code></span></span><span id='variant.F32ConvertUI64' class='variant'><span id='F32ConvertUI64.v' class='invisible'><code>F32ConvertUI64</code></span></span><span id='variant.F32DemoteF64' class='variant'><span id='F32DemoteF64.v' class='invisible'><code>F32DemoteF64</code></span></span><span id='variant.F64ConvertSI32' class='variant'><span id='F64ConvertSI32.v' class='invisible'><code>F64ConvertSI32</code></span></span><span id='variant.F64ConvertUI32' class='variant'><span id='F64ConvertUI32.v' class='invisible'><code>F64ConvertUI32</code></span></span><span id='variant.F64ConvertSI64' class='variant'><span id='F64ConvertSI64.v' class='invisible'><code>F64ConvertSI64</code></span></span><span id='variant.F64ConvertUI64' class='variant'><span id='F64ConvertUI64.v' class='invisible'><code>F64ConvertUI64</code></span></span><span id='variant.F64PromoteF32' class='variant'><span id='F64PromoteF32.v' class='invisible'><code>F64PromoteF32</code></span></span><span id='variant.I32ReinterpretF32' class='variant'><span id='I32ReinterpretF32.v' class='invisible'><code>I32ReinterpretF32</code></span></span><span id='variant.I64ReinterpretF64' class='variant'><span id='I64ReinterpretF64.v' class='invisible'><code>I64ReinterpretF64</code></span></span><span id='variant.F32ReinterpretI32' class='variant'><span id='F32ReinterpretI32.v' class='invisible'><code>F32ReinterpretI32</code></span></span><span id='variant.F64ReinterpretI64' class='variant'><span id='F64ReinterpretI64.v' class='invisible'><code>F64ReinterpretI64</code></span></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#288-297' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.is_terminal' class="method"><span id='is_terminal.v' class='invisible'><code>fn <a href='#method.is_terminal' class='fnname'>is_terminal</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>Is this opcode determines the termination of opcode sequence
+<code>true</code> for <code>Opcode::End</code></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#98' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#98' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../../parity_wasm/elements/trait.Deserialize.html" title="trait parity_wasm::elements::Deserialize">Deserialize</a> for <a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#299-577' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Error' class="type"><span id='Error.t' class='invisible'><code>type <a href='../../parity_wasm/elements/trait.Deserialize.html#associatedtype.Error' class="type">Error</a> = <a class="enum" href="../../parity_wasm/elements/enum.Error.html" title="enum parity_wasm::elements::Error">Error</a></code></span></h4>
+<div class='docblock'><p>Serialization error produced by deserialization routine.</p>
+</div><h4 id='method.deserialize' class="method"><span id='deserialize.v' class='invisible'><code>fn <a href='../../parity_wasm/elements/trait.Deserialize.html#tymethod.deserialize' class='fnname'>deserialize</a>&lt;R:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Read.html" title="trait std::io::Read">Read</a>&gt;(reader: &amp;mut R) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;Self, Self::<a class="trait" href="../../parity_wasm/elements/trait.Deserialize.html" title="trait parity_wasm::elements::Deserialize">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Deserialize type from serial i/o</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="../../parity_wasm/elements/trait.Serialize.html" title="trait parity_wasm::elements::Serialize">Serialize</a> for <a class="enum" href="../../parity_wasm/elements/enum.Opcode.html" title="enum parity_wasm::elements::Opcode">Opcode</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/parity_wasm/elements/ops.rs.html#590-897' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='associatedtype.Error-1' class="type"><span id='Error.t-1' class='invisible'><code>type <a href='../../parity_wasm/elements/trait.Serialize.html#associatedtype.Error' class="type">Error</a> = <a class="enum" href="../../parity_wasm/elements/enum.Error.html" title="enum parity_wasm::elements::Error">Error</a></code></span></h4>
+<div class='docblock'><p>Serialization error produced by serialization routine.</p>
+</div><h4 id='method.serialize' class="method"><span id='serialize.v' class='invisible'><code>fn <a href='../../parity_wasm/elements/trait.Serialize.html#tymethod.serialize' class='fnname'>serialize</a>&lt;W:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/std/io/trait.Write.html" title="trait std::io::Write">Write</a>&gt;(self, writer: &amp;mut W) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, Self::<a class="trait" href="../../parity_wasm/elements/trait.Serialize.html" title="trait parity_wasm::elements::Serialize">Error</a>&gt;</code></span></h4>
+<div class='docblock'><p>Serialize type to serial i/o</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "parity_wasm";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>
